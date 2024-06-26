@@ -38,6 +38,7 @@ Composer sera mis à jour. En cas d'erreur, rien de grave, vous pouvez continuer
  - A la question suivante :  
      `Default database updated. Would you like to run the default database migrations? (yes/no)`  
      répondre no
+   
 Si votre base de données n'est pas chargée, saisir :
 >php artisan migrate
 
