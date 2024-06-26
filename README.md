@@ -65,8 +65,9 @@ Avec Laragon choisissez :
 ## Debugger votre programme
 1. L'instruction **dd()** affiche les données passées en paramètre et stoppe le programme
 2. L'instruction **dump()** affiche les données passées en paramètre et continue l'exécution
-3. Les logs sont visibles dans le répertoire **storage/logs**
-4. Si la page d'erreur n'apparait pas, vous pouvez installer telescope : `php artisan telescope:install` 
+3. L'instruction **@dump()** a la même fonctionnalité que **dump()** mais s'exécute dans la vue.
+4. Les logs sont visibles dans le répertoire **storage/logs**
+5. Si la page d'erreur n'apparait pas, vous pouvez installer telescope : `php artisan telescope:install` 
 
 2 outils pour debugger :
 #### [laravel-debugbar](https://github.com/barryvdh/laravel-debugbar)
@@ -86,10 +87,11 @@ Cet Exemple est valable pour le visiteur, à vous de l’adapter pour un autre t
 ### Étape 2 créer la route
 Ici, on affiche des données, d'où la méthode GET.
 ```
-Route::get('test',[ 
-    'as'=>'chemin_test', 
-    'uses'=>'etatFraisController@test' 
-]);
+Route::controller(etatFraisController::class)->group(function () {
+  ...
+ Route::get('/test', 'test')->name('chemin_test');
+});
+
 ```
 ### Étape 31 Ajouter une méthode au contrôleur EtatFraisController
 ```
