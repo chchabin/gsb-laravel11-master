@@ -31,23 +31,16 @@ Une fois **composer** identifié saisissez :
 Composer sera mis à jour. En cas d'erreur, rien de grave, vous pouvez continuer le process.
 * Déplacez-vous pour aller dans le répertoire de publication (www sous Windows).
 * Ouvrez une console dans ce répertoire. Saisissez la première fois :
-> composer global require laravel/installer
-> Laravel new gsbLaravel
- - Vous allez avoir des questions que vous passerez par défaut.
- - Vérifiez bien à la fin que la base de donnée est bien `Mysql`
- - A la question suivante :  
-     `Default database updated. Would you like to run the default database migrations? (yes/no)`  
-     répondre no
-   
-Si votre base de données n'est pas chargée, saisir :
->php artisan migrate
+> composer create-project --prefer-dist laravel/laravel gsbLaravel
 
 ### Copie des fichiers de gsb
 * Téléchargez gsb-laravel-master
 * Copiez les fichiers du zip dans votre répertoire
 * Répondez que vous voulez modifier à chaque fois que la question est posée.
 * Il faudra modifier si nécessaire les paramètres de connexion du fichier d'environnement :
->  .env 
+>  .env
+* Allez dans le repertoire `gsbLaravel` et saisir
+>php artisan migrate
 
 ## Bugs à l'utilisation
 ### Erreur 404
